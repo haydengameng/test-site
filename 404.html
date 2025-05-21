@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    const repo = '/test-site/'; // Replace with your repo name
-    const path = window.location.pathname;
-    window.location.href = repo + 'index.html?redirect=' + encodeURIComponent(path);
+     const base = '/test-site/';
+     window.location.href = base + 'index.html?redirect='
+                        + encodeURIComponent(location.pathname);
   </script>
 </head>
 <body>
