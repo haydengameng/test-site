@@ -1,16 +1,5 @@
-<script>
-    const params = new URLSearchParams(window.location.search);
-const redirect = params.get('redirect');
 
-// Optional: route to a specific SPA view
-if (redirect && redirect.startsWith('/') && !redirect.includes('//')) {
-  // Safely handle routing internally
-  router.push(redirect); // or manually change content if not using a framework
-}
 
-// Clean up URL
-window.history.replaceState({}, '', window.location.pathname);
-</script>
 <!DOCTYPE html>
 <html>
 <head>
