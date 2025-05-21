@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SPA Example</title>
+</head>
+<body>
+  <h1>Welcome to the SPA</h1>
+  <p id="content">Home Page</p>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const path = params.get('redirect');
+    if (path) {
+      document.getElementById('content').textContent = "You were redirected from: " + path;
+    }
+  </script>
+</body>
+</html>
