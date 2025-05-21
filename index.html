@@ -1,3 +1,21 @@
+<script type="text/javascript">
+// For GitHub Pages with custom domain
+window.location.href = '/index.html' + '?redirect=' + encodeURIComponent(path);
+
+// OR for GitHub Pages subdirectory (username.github.io/repo-name)
+window.location.href = '/test-site/index.html' + '?redirect=' + encodeURIComponent(path);
+
+// In your SPA, safely handle the redirect parameter
+const urlParams = new URLSearchParams(window.location.search);
+const redirectPath = urlParams.get('redirect');
+
+// Validate the path before using it
+if (redirectPath && redirectPath.startsWith('/') && !redirectPath.includes('..')) {
+    // Use your router to navigate to the redirectPath
+    yourRouter.push(redirectPath);
+}
+</script>
+
 
 <!DOCTYPE html>
 <html>
