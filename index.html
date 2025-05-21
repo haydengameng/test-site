@@ -1,4 +1,19 @@
+<script>
 
+    // In your SPA's main JavaScript
+const urlParams = new URLSearchParams(window.location.search);
+const redirect = urlParams.get('redirect');
+
+if (redirect) {
+  // Validate it's a relative path and starts with /
+  if (redirect.startsWith('/') && !redirect.includes('//')) {
+    // Safe to use for internal routing
+    router.push(redirect);
+  }
+  // Clear the parameter
+  window.history.replaceState({}, '', window.location.pathname);
+}
+</script>
 
 <!DOCTYPE html>
 <html>
