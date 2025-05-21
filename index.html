@@ -1,28 +1,16 @@
-<script type="text/javascript">
-// In your SPA's main JavaScript
-const urlParams = new URLSearchParams(window.location.search);
-const redirect = urlParams.get('redirect');
-
-if (redirect) {
-  // Validate it's a relative path and starts with /
-  if (redirect.startsWith('/') && !redirect.includes('//')) {
-    // Safe to use for internal routing
-    router.push(redirect);
-  }
-  // Clear the parameter
-  window.history.replaceState({}, '', window.location.pathname);
-}
-</script>
-
-
 <!DOCTYPE html>
 <html>
-<head>
-    <!-- Same head content as index.html -->
-     success
-</head>
-<body>
-    <!-- Same body content as index.html -->
-    <!-- Your SPA will load and handle the routing -->
-</body>
-</html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Extract the path from the current URL
+      var path = window.location.pathname;
+      // Redirect to index.html while preserving the path (if needed, pass it to your SPA via query parameters or hash)
+      window.location.href = '/index.html' + '?redirect=' + encodeURIComponent(path);
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html> 
