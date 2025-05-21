@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    // Adjust if you're using a project page
-    const repo = '/test-site/'; // <-- change this to your actual repo name
-
-    const path = window.location.pathname;
-    window.location.href = repo + 'index.html?redirect=' + encodeURIComponent(path);
+    const base = '{{ site.baseurl }}';   // '' for user page,
+                                      // '/my-repo' for project page
+    window.location.href = base + '/index.html?redirect='
+                        + encodeURIComponent(location.pathname);
   </script>
 </head>
 <body>
